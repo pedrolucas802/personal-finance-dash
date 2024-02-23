@@ -1,5 +1,5 @@
 # Welcome to PLSB dashboard
 
-This is the app you get when you run `streamlit hello`, extracted as its own app.
+This an app I have created to maintain track of my monthly and annual expenses.
 
-Edit [Hello.py](./Main.py) to customize this app to your heart's desire. ❤️
+It is based on the streamlit framework and cosumes data from a private Google Sheets.
