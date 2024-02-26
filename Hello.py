@@ -1,10 +1,10 @@
 
 import streamlit as st
 import pandas as pd
-# import plotly.express as px
+import plotly.express as px
 from streamlit.logger import get_logger
 from streamlit_gsheets import GSheetsConnection
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 LOGGER = get_logger(__name__)
 
@@ -111,12 +111,9 @@ def display_expenses_data(df, option):
             ]
         }
 
-        fig, ax = plt.subplots()
-        categories = data["Category"]
-        amounts = data["Amount"]
-        ax.pie(amounts, labels=categories, autopct="%1.1f%%", startangle=140)
-        ax.set_title("Expense Breakdown")
-        st.pyplot(fig)
+        df = pd.DataFrame(data)
+        fig = px.pie(df, values='Amount', names='Category')
+        st.plotly_chart(fig)
 
 
 
